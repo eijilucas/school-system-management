@@ -18,7 +18,7 @@ import com.spring.school.entities.TeacherEntity;
 import com.spring.school.services.TeacherServices;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/teachers")
 public class TeacherController {
 
 	@Autowired
