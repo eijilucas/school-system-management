@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,15 +22,20 @@ public class DisciplineEntity implements Serializable{
 	private String name;
 	private String description;
 	
+	@ManyToOne
+	@JoinColumn(name = "department_id")
+	private DepartmentEntity department;
+	
 	public DisciplineEntity() {
 		super();
 	}
 
-	public DisciplineEntity(Long id, String name, String description) {
+	public DisciplineEntity(Long id, String name, String description, DepartmentEntity department) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.department = department;
 	}
 
 	public Long getId() {
@@ -53,6 +60,10 @@ public class DisciplineEntity implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public DepartmentEntity getDepartment() {
+		return department;
 	}
 
 	@Override
