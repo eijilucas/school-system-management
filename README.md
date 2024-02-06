@@ -4,12 +4,12 @@
 # Sobre o projeto
 - API para gerenciamento de escolas utilizando Java.
 
-![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/school.png)
-![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/teachers.png)
-![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/departments.png)
-![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/disciplines.png)
-![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/students.png)
-![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/classes.png)
+![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/school.png)<br>
+![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/teachers.png)<br>
+![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/departments.png)<br>
+![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/disciplines.png)<br>
+![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/students.png)<br>
+![Tela Funcionamento](https://github.com/eijilucas/assets/blob/main/classes.png)<br>
 
 # Tecnologias utilizadas
 
