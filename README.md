@@ -33,5 +33,5 @@ cd school-system-management
 
 # Autor
 
-Lucas Eiji Miura
+Lucas Eiji Miura<br/>
 https://www.linkedin.com/in/eijilucas/
