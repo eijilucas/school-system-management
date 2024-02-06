@@ -1,14 +1,18 @@
 package com.spring.school.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,10 +25,13 @@ public class DisciplineEntity implements Serializable{
 	private Long id;
 	private String name;
 	private String description;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "department_id")
 	private DepartmentEntity department;
+	
+	@OneToMany(mappedBy = "discipline", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TeacherEntity> teachers = new ArrayList<>();
 	
 	public DisciplineEntity() {
 		super();

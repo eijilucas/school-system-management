@@ -1,11 +1,9 @@
 package com.spring.school.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,8 +22,8 @@ public class DepartmentEntity implements Serializable{
 	private String name;
 	private String description;
 	
-	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
-	private List<DisciplineEntity> disciplines = new ArrayList<>();
+	@OneToMany(mappedBy = "department")
+	private List<DisciplineEntity> disciplines;
 	
 	public DepartmentEntity() {
 		super();
@@ -60,10 +58,6 @@ public class DepartmentEntity implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public List<DisciplineEntity> getDisciplines() {
-		return disciplines;
 	}
 
 	@Override

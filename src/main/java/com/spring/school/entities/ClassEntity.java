@@ -1,12 +1,14 @@
 package com.spring.school.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +21,9 @@ public class ClassEntity implements Serializable{
 	private Long id;
 	private String name;
 	private String academicYear;
+	
+	@OneToMany(mappedBy = "classEntity")
+	private List<StudentEntity> students;
 	
 	public ClassEntity() {
 		super();

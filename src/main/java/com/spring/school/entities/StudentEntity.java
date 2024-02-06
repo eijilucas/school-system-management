@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,16 +24,21 @@ public class StudentEntity implements Serializable{
 	private String email;
 	private Date birthDate;
 	
+	@ManyToOne
+	@JoinColumn(name = "class_id")
+	private ClassEntity classEntity;
+	
 	public StudentEntity() {
 		
 	}
 
-	public StudentEntity(Long id, String name, String email, Date birthDate) {
+	public StudentEntity(Long id, String name, String email, Date birthDate, ClassEntity classEntity) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
+		this.classEntity = classEntity;
 	}
 
 	public Long getId() {
@@ -65,6 +72,10 @@ public class StudentEntity implements Serializable{
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+	
+	public ClassEntity getClassEntity() {
+		return classEntity;
+	}
 
 	@Override
 	public int hashCode() {
@@ -82,5 +93,5 @@ public class StudentEntity implements Serializable{
 		StudentEntity other = (StudentEntity) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 }

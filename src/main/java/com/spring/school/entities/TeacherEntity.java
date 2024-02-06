@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,15 +22,20 @@ public class TeacherEntity implements Serializable{
 	private String name;
 	private String email;
 	
+	@ManyToOne
+	@JoinColumn(name = "discipline_id")
+	private DisciplineEntity discipline;
+	
 	public TeacherEntity() {
 		
 	}
 
-	public TeacherEntity(Long id, String name, String email) {
+	public TeacherEntity(Long id, String name, String email, DisciplineEntity discipline) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
+		this.discipline = discipline;
 	}
 
 	public Long getId() {
@@ -55,6 +62,10 @@ public class TeacherEntity implements Serializable{
 		this.email = email;
 	}
 
+	public DisciplineEntity getDisciplineEntity() {
+		return discipline;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
